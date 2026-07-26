@@ -1,0 +1,4 @@
+concepto,monto_moneda_local,moneda,llegadas,por_llegada_local,tipo_cambio,por_llegada_usd,tipo,fuente
+RD Fondo Mixto (presupuesto),2899030379,DOP,8860709,327.18,61.49,5.32,aprobado/presupuesto,"BCRD (llegadas) + Ley PGE RD 2025 (Fondo Mixto, fuente 1970)"
+QRoo CPTQ (aprobado),752866213,MXN,10303994,73.07,19.21,3.80,aprobado,"Congreso QRoo PE 2025 + AFAC/ASUR (llegadas derivadas, bidireccional/2)"
+QRoo CPTQ (ejercido),1269894759,MXN,10303994,123.24,19.21,6.42,ejercido,"SEFIPLAN Cuenta Publica 2025 + AFAC/ASUR (llegadas derivadas, bidireccional/2)"
