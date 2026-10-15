@@ -1,17 +1,26 @@
 # cptq-promocion
 
-Datos, código y fuentes de la pieza **"Más pesos, menos pasajeros"** del Riviera
-Maya Economic Pulse.
+Datos, código y fuentes de la pieza **"Quintana Roo ejerció 1,269.9 millones en
+promoción en 2025, su máximo, y la afluencia cayó"** del Riviera Maya Economic Pulse
+(publicada el 25-jul-2026 como "Más pesos, menos pasajeros").
 
 Enlace: https://rivieramayapulse.com/analisis/mas-pesos-menos-pasajeros/
 
 ## La pregunta
 
-¿La Riviera necesita "más presupuesto de promoción", como pide el sector? Los
-dos datos que casi nunca se sientan en la misma mesa: República Dominicana
-presupuesta más promoción por visitante que Quintana Roo, **y** el gasto de
-promoción que Quintana Roo ejerció en 2025 fue el más alto de su historia y la
-afluencia cayó de todos modos.
+¿La Riviera necesita "más presupuesto de promoción", como pide el sector? El gasto
+de promoción que Quintana Roo ejerció en 2025 fue el más alto de su historia y la
+afluencia cayó de todos modos. Y medido por llegada internacional, Quintana Roo
+destinó a promoción en 2025 más que República Dominicana, en el presupuesto y en el
+gasto.
+
+> **Corrección del 14-oct-2026.** Este repositorio comparaba al principio el
+> aprobado del Consejo con el Fondo Mixto dominicano (fuente específica 1970 de la
+> Ley de Presupuesto), que es un ingreso estimado y no lo que el Ministerio de
+> Turismo presupuesta para gastar en promoción. Esa comparación se retiró. El
+> benchmark usa ahora el gasto de la actividad «Promoción Turística Internacional»
+> del Ministerio de Turismo, aprobado y ejercido. Ver la nota de corrección en la
+> pieza.
 
 ## Las dos series del CPTQ: NO se empalman
 
@@ -45,13 +54,19 @@ serie de precisión.
 
 ## El benchmark por llegada
 
-`data/por_llegada_2025.csv` compara promoción por llegada internacional en 2025:
-Rep. Dominicana (presupuesto) US$5.32, Quintana Roo aprobado US$3.80, Quintana
-Roo ejercido US$6.42. Tipo de cambio promedio 2025 = **19.21 MXN/USD** (serie
-diaria DEXMXUS de la Reserva Federal, que republica el tipo de cambio de Banxico;
-promedio de 250 observaciones); RD a 61.49 DOP/USD. Las llegadas de Quintana Roo
+`data/por_llegada_2025.csv` compara promoción por llegada internacional en 2025,
+**aprobado con aprobado y ejercido con ejercido**:
+
+| | Aprobado | Ejercido |
+|---|---|---|
+| República Dominicana (Promoción Turística Internacional, MITUR) | US$1.55 | US$2.70 |
+| Quintana Roo (CPTQ) | US$3.81 | US$6.42 |
+
+Tipo de cambio: promedio 2025 del **FIX del Banco de México, 19.1996 MXN/USD**
+(251 observaciones) y promedio anual de la **tasa de referencia del Banco Central
+de la República Dominicana, 61.9949 DOP/USD** (venta). Las llegadas de Quintana Roo
 son **derivadas** (AFAC/ASUR, internacional bidireccional ÷ 2); las de RD son
-conteo real del BCRD.
+conteo real del BCRD (no residentes, vía aérea).
 
 ## Contenido
 
@@ -60,12 +75,14 @@ data/
   cptq_ejercido.csv     Serie ejercida (devengado) 2018-2025, con fuente y URL por fila.
   cptq_aprobado.csv     Serie aprobada 2018-2026, con fuente y URL por fila (2022 = n/d).
   afluencia_qroo.csv    Afluencia total de turistas 2018-2025 (SEDETUR), con caveats.
-  por_llegada_2025.csv  Benchmark RD vs QRoo por llegada (aprobado y ejercido).
+  por_llegada_2025.csv  Benchmark RD vs QRoo por llegada (aprobado y ejercido, 4 filas).
 chart/
   g1_serie_afluencia.py Gráfico firma (barras ejercido + línea afluencia).
-  g2_por_llegada.py     Benchmark por llegada (barras).
+  g2_por_llegada.py     Benchmark por llegada (barras, dos pares: aprobado y ejercido).
 assets/
-  g1_*, g2_*            PNG 800/1600 y SVG.
+  g1_*, g2_*            PNG 800/1600 y SVG, los mismos que sirve la pieza.
+  pulse-og-gasto-record.jpg  Imagen social de la pieza. Desde el 15-oct-2026 sale del
+                        generador de imágenes del sitio, no de este repositorio.
 ```
 
 ## Fuentes
@@ -76,10 +93,13 @@ assets/
 - **Aprobado 2025/2026:** Presupuesto de Egresos, Congreso de Quintana Roo
   (Decretos 313 y 198), `documentos.congresoqroo.gob.mx`.
 - **Afluencia:** SEDETUR Quintana Roo, reportes "¿Cómo Vamos?".
-- **Fondo Mixto RD:** Ley de Presupuesto General del Estado de RD 2025 (fuente
-  específica 1970). **Llegadas RD:** Banco Central de la República Dominicana.
+- **Gasto de promoción RD:** Dirección General de Presupuesto (DIGEPRES), libro de
+  ejecución presupuestaria 2025, capítulo 0213 Ministerio de Turismo, programa 11,
+  actividad «Promoción Turística Internacional» (presupuesto inicial y devengado).
+  **Llegadas RD:** Banco Central de la República Dominicana.
 - **Llegadas QRoo:** AFAC (Estadística Operacional de Aeropuertos) y ASUR.
-- **Tipo de cambio:** DEXMXUS (Reserva Federal / Banxico), promedio 2025.
+- **Tipo de cambio:** Banco de México (FIX) y Banco Central de la República
+  Dominicana (tasa de referencia del mercado spot), promedios 2025.
 
 ## Reproducir
 
@@ -90,8 +110,12 @@ python chart/g1_serie_afluencia.py
 python chart/g2_por_llegada.py
 ```
 
+Los PNG salen idénticos a los publicados. El SVG cambia en cada corrida solo en los
+identificadores internos que matplotlib sortea; el dibujo es el mismo.
+
 ## Licencias
 
 - **Código** (`chart/`): MIT.
 - **Datos** (`data/`) y gráficos (`assets/`): CC BY 4.0. Atribución: "Riviera Maya
-  Economic Pulse, a partir de SEFIPLAN Quintana Roo, SEDETUR, BCRD y AFAC/ASUR".
+  Economic Pulse, a partir de SEFIPLAN Quintana Roo, SEDETUR, DIGEPRES, BCRD, Banco de México y
+  AFAC/ASUR".

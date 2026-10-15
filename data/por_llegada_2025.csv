@@ -1,4 +1,5 @@
-concepto,monto_moneda_local,moneda,llegadas,por_llegada_local,tipo_cambio,por_llegada_usd,tipo,fuente
-RD Fondo Mixto (presupuesto),2899030379,DOP,8860709,327.18,61.49,5.32,aprobado/presupuesto,"BCRD (llegadas) + Ley PGE RD 2025 (Fondo Mixto, fuente 1970)"
-QRoo CPTQ (aprobado),752866213,MXN,10303994,73.07,19.21,3.80,aprobado,"Congreso QRoo PE 2025 + AFAC/ASUR (llegadas derivadas, bidireccional/2)"
-QRoo CPTQ (ejercido),1269894759,MXN,10303994,123.24,19.21,6.42,ejercido,"SEFIPLAN Cuenta Publica 2025 + AFAC/ASUR (llegadas derivadas, bidireccional/2)"
+concepto,monto_moneda_local,moneda,llegadas,por_llegada_local,tipo_cambio,por_llegada_usd,etapa,fuente
+"RD Ministerio de Turismo, Promoción Turística Internacional (aprobado)",850791658.00,DOP,8860709,96.02,61.9949,1.55,aprobado,"DIGEPRES, libro de ejecución presupuestaria 2025 (presupuesto inicial, cap. 0213, prog. 11, prod. 04, act. 0001) + BCRD (llegadas no residentes vía aérea)"
+"RD Ministerio de Turismo, Promoción Turística Internacional (ejercido)",1480470278.70,DOP,8860709,167.08,61.9949,2.70,ejercido,"DIGEPRES, libro de ejecución presupuestaria 2025 (devengado) + BCRD (llegadas)"
+QRoo CPTQ (aprobado),752866213.00,MXN,10303994,73.07,19.1996,3.81,aprobado,"Congreso QRoo, Presupuesto de Egresos 2025 + AFAC/ASUR (llegadas derivadas, bidireccional/2)"
+QRoo CPTQ (ejercido),1269894758.85,MXN,10303994,123.24,19.1996,6.42,ejercido,"SEFIPLAN, Cuenta Pública 2025 del CPTQ + AFAC/ASUR (llegadas derivadas, bidireccional/2)"
